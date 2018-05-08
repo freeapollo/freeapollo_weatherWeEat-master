@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weather We Eat?</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+	<link rel="shortcut icon" href="dev/assets/favicon-16x16.png" type="image/x-icon">
+	<link rel="stylesheet" href="dev/plugins/teleport/teleport-autocomplete.css">
+	<link rel="stylesheet" href="public/styles/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Playfair+Display:400,700,700i" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="overlay">
+			<div class="headerWrapper">
+				<div class="headerContainer">
+					<div class="title">
+						<h1>Weather We Eat?</h1>
+						<h2>The app that gives you the best recipe based on your weather!</h2>
+						<a href="#userInfo"><button id ="getStarted">Get Started!</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<form class="userInfo" id="userInfo" action="#resultsContainer">
+			<div class="wrapper">
+				<div class="tp-autocomplete">
+					<div class="userInput">
+						<input type="text" class="my-input tp-ac__input" placeholder="Pick your city" autocomplete="on">
+						<ul class="tp-ac__list"></ul>
+					</div>
+				</div>
+				<div class="foodRestricts">
+					<div class="firstPartFoodRestricts clearfix">
+						<div class="peanutFree">
+							<input type="checkbox" class="allergy" id="check1" value="394^Peanut-Free">
+							<label for="check1">Peanut Free</label>
+							<img src="dev/assets/peanut.svg" alt="Peanut Free Icon">
+						</div>
+						<div class="treenutFree">
+							<input type="checkbox" class="allergy" id="check2" value="395^Tree Nut-Free">
+							<label for="check2">Tree Nut Free</label>
+							<img src="dev/assets/treenuts.svg" alt="Tree Nut Free Icon">
+						</div>
+						<div class="glutenFree">
+							<input type="checkbox" class="allergy" id="check3" value="393^Gluten-Free">
+							<label for="check3">Gluten Free</label>
+							<img src="dev/assets/wheat.svg" alt="Gluten Free Icon">
+						</div>
+						<div class="seafoodFree">
+							<input type="checkbox" class="allergy" id="check4" value="398^Seafood-Free">
+							<label for="check4">Seafood Free</label>
+							<img src="dev/assets/seafood.svg" alt="Seafood Icon">
+						</div>
+						<div class="dairyFree">
+							<input type="checkbox" class="allergy" id="check5" value="396^Dairy-Free">
+							<label for="check5">Dairy Free</label>
+							<img src="dev/assets/diary.svg" alt="Diary Free Icon">
+						</div>
+						<div class="eggFree">
+							<input type="checkbox" class="allergy" id="check6" value="397^Egg-Free">
+							<label for="check6">Egg Free</label>
+							<img src="dev/assets/egg.svg" alt="Eggs Free Icon">
+						</div>
+					
+					
+						<div class="soyFree">
+							<input type="checkbox" class="allergy" id="check7" value="400^Soy-Free">
+							<label for="check7">Soy Free</label>
+							<img src="dev/assets/soy.svg" alt="Soy Free Icon">
+						</div>
+						<div class="seasameFree">
+							<input type="checkbox" class="allergy" id="check8" value="399^Sesame-Free">
+							<label for="check8">Sesame Free</label>
+							<img src="dev/assets/seasame.svg" alt="Seasame Free Icon">
+						</div>
+						<div class="sulfiteFree">
+							<input type="checkbox" class="allergy" id="check9" value="401^Sulfite-Free">
+							<label for="check9">Sulfite Free</label>
+							<img src="dev/assets/sulftie.svg" alt="SulfiteFree">
+						</div>
+						<div class="vegetarian">
+							<input type="checkbox" class="diet" id="check10" value="387^Lacto-ovo vegetarian">
+							<label for="check10">Vegetarian</label>
+							<img src="dev/assets/vegetarian.svg" alt="Vegetarian Icon">
+						</div>
+						<div class="vegan">
+							<input type="checkbox" class="diet" id="check11" value="386^Vegan">
+							<label for="check11">Vegan</label>
+							<img src="dev/assets/vegan.svg" alt="Vegan Icon">
+						</div>
+						<div class="paleo">
+							<input type="checkbox" class="diet" id="check12" value="403^Paleo">
+							<label for="check12">Paleo</label>
+							<img src="dev/assets/paleo.svg" alt="Paleo Icon">
+						</div>
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="Submit">
+		</form>
+		</div>
+		<section id="resultsContainer" class="clearfix">
+			<div class="resultsWrapper">
+				<div class="wrapper clearfix">
+					<div id ="recipeContainer"></div>
+					<aside>
+						<div id="weatherContainer"></div>
+						<div class="savedRecipes"></div>
+					</aside>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div class="wrapper">
+			<div class="footerContainer clearfix">
+				<div class="footerLeft">
+					<p>Header photo by <a href="https://unsplash.com/@oelli" target="_blank">Elli O.</a> at <a href="https://unsplash.com/@oelli?photo=XoByiBymX20" target="_blank">Unsplash</a></p>
+					<p>Food Allergy Icons by <a href="https://thenounproject.com/tomas.knopp/" target="_blank">Tomas Knopp</a> at <a href="https://thenounproject.com/tomas.knopp/collection/allergens/?oq=food%20allergies&cidx=3">The Noun Project</a></p>
+					<p>Climacons by<a href="http://adamwhitcroft.com/climacons/" target="_blank"> Adam Whitcroft</a></p>
+				</div>
+				<div class="footerCenter">
+					<p>Powered by:</p>
+					<a href="https://darksky.net/dev" target="_blank"><img class="darkSky" src="dev/assets/darkSkyBeige.png" alt="Dark Sky Api Logo"></a>
+					<a href="https://teleport.org/" target="_blank"><img class="teleport" src="dev/assets/teleportLogoBeige.png" alt="Teleport Api Logo"></a>
+					<a href="https://developer.yummly.com/" target="_blank"><img class="yummily" src="dev/assets/yummilyBeige.png" alt="Yummily Api Logo"></a>
+					<h3> &copy; 2017 Weather We Eat?</h3>
+				</div>
+				<div class="footerRight">
+					<p>Built by:</p>
+					<p>
+						<a href="http://www.brettnielsen.ca" target="_blank">Brett Nielsen</a>, 
+						<a href="http://www.fayeyujingma.ca" target="_blank">Faye Ma</a> & 
+						<a href="http://www.timlemke.ca" target="_blank">Tim Lemke</a>
+					</p>
+				</div>
+		</div>
+	</footer>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyAIdzRAgX-nnK34cmO7bQCqS0081747WjQ",
+		authDomain: "brett-faye-tim-project5.firebaseapp.com",
+		databaseURL: "https://brett-faye-tim-project5.firebaseio.com",
+		projectId: "brett-faye-tim-project5",
+		storageBucket: "",
+		messagingSenderId: "91540201290"
+	};
+	firebase.initializeApp(config);
+</script>
+<script src="dev/plugins/teleport/teleport-autocomplete.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="dev/scripts/main.js"></script>
+</body>
+</html>
